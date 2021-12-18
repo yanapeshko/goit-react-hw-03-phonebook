@@ -14,16 +14,17 @@ export default class App extends Component {
     ],
     filter: '',
   };
+  #key = 'contacts';
 
   componentDidMount() {
-    const parsedContacts = JSON.parse(localStorage.getItem('contacts'));
+    const parsedContacts = JSON.parse(localStorage.getItem(this.#key));
 
     parsedContacts && this.setState({ contacts: parsedContacts });
   }
 
   componentDidUpdate(prevState) {
     this.state.contacts !== prevState.contacts &&
-      localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
+      localStorage.setItem(this.#key, JSON.stringify(this.state.contacts));
   }
 
   addContact = task => {

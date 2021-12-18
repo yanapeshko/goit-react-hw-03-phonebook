@@ -33,6 +33,9 @@
 }
 
 .TaskList_button {
+  cursor: pointer;
   margin-right: 4px;
   margin-left: 4px;
+
+  color: rgba(20, 17, 17, 0.671);
 }
